@@ -51,6 +51,7 @@ header div.reseaux {
 }
 
 header img {
-    height: 4rem;
+    max-height: 7vh;
+    max-width: 7vw;
     margin: 2vw;
 }
