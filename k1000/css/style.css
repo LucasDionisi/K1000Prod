@@ -1,0 +1,56 @@
+:root {
+    --main-font-color-white: rgba(255, 255, 255, 1);
+}
+
+body {
+    margin: 0;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 2rem;
+
+}
+
+h2 {
+    font-size: 4rem;
+    margin: 0;
+}
+
+header {
+    background-image: url("../ressources/k1000-header.jpg");
+    background-size: cover;
+    background-position: center 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header div.overlay {
+    background-color: rgba(37, 58, 88, .5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+}
+
+header .title {
+    color: var(--main-font-color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+header div.reseaux {
+    position: relative;
+}
+
+header img {
+    height: 4rem;
+    margin: 2vw;
+}
