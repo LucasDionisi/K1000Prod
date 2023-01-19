@@ -1,5 +1,9 @@
+/* font : pas loin de Banhshift -> classique */
+
 :root {
     --main-font-color-white: rgba(255, 255, 255, 1);
+    --main-bg-color: rgba(232, 232, 232, 1);
+    --second-bg-color: rgba(242, 242, 242, 1);
 }
 
 body {
@@ -9,12 +13,22 @@ body {
 h1 {
     font-size: 5rem;
     margin: 2rem;
-
 }
 
 h2 {
     font-size: 4rem;
     margin: 0;
+    text-align: center;
+}
+
+h3 {
+    margin: 0 0 2rem 0;
+    font-size: 1.3rem;
+}
+
+p {
+    margin: 0;
+    font-size: 1rem;
 }
 
 header {
@@ -22,7 +36,7 @@ header {
     background-size: cover;
     background-position: center 0;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -31,11 +45,12 @@ header {
 
 header div.overlay {
     background-color: rgba(37, 58, 88, .5);
+    height: 100vh;
+    width: 100%;
     position: absolute;
     left: 0;
     top: 0;
-    bottom: 0;
-    right: 0;
+    box-shadow: 0 1rem 3rem 1rem rgba(0, 0, 0, .25);
 }
 
 header .title {
@@ -55,3 +70,69 @@ header img {
     max-width: 7vw;
     margin: 2vw;
 }
+
+main {
+    background-color: var(--main-bg-color);
+    width: 100%;
+}
+
+section.bio {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section.bio div.text,
+section.bio img {
+    box-shadow: .75rem 0rem 1.5rem 0 rgba(0, 0, 0, .4);
+}
+
+section.bio div.text {
+    position: relative;
+    z-index: 2;
+    background-color: var(--second-bg-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2rem 3rem;
+    max-height: 45vh;
+    max-width: 45vw;
+    aspect-ratio: 1/1;
+    border-radius: 1rem;
+    transform: rotate(-5deg) translate(4rem, 1rem);
+}
+
+section.bio img {
+    position: relative;
+    z-index: 1;
+    max-height: 60vh;
+    max-width: 50vw;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: .5rem;
+    transform: scaleX(-1);
+}
+
+section.bio div.text p {
+    text-align: justify;
+}
+
+@media screen and (max-width: 800px) {
+    section.bio img {
+        display: none;
+    }
+
+    section.bio div.text {
+        transform: none;
+    }
+}
+
+
+
+
+
+
+
+
