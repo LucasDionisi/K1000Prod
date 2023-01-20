@@ -8,6 +8,8 @@
 :root {
     --main-font-color-white: rgba(255, 255, 255, 1);
     --main-bg-color: rgba(232, 232, 232, 1);
+    --main-pagination-bg-color: rgba(202, 202, 202, 1);
+    --second-pagination-bg-color: rgba(167, 185, 202, 1);
     --overlay-bg-color: rgba(37, 58, 88, .5);
     --second-bg-color: rgba(242, 242, 242, 1);
 
@@ -17,6 +19,7 @@
 html {
     font-size: 16px;
     font-family: var(--main-font);
+    background-color: var(--main-bg-color);
 }
 
 body {
@@ -35,13 +38,29 @@ h2 {
 }
 
 h3 {
-    margin: 0 0 2rem 0;
+    font-size: 2.5rem;
+}
+
+h4 {
     font-size: 1.3rem;
+    margin: 0 0 1.5rem 0;
 }
 
 p {
     margin: 0;
     font-size: 1rem;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
+
+hr {
+    width: 70vw;
+    height: .15rem;
+    border-radius: 5rem;
+    background: rgba(1, 1, 1, .7);
 }
 
 header {
@@ -141,6 +160,107 @@ section.bio div.text p {
     text-align: justify;
 }
 
+section.videos {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section.videos div.video {
+    display: flex;
+    align-items: center;
+}
+
+section.videos div.video img {
+    height: 2rem;
+    width: auto;
+    margin: 3rem;
+}
+
+section.videos div.video img:hover {
+    cursor: pointer;
+}
+
+section.videos div.video iframe {
+    width: 50vw;
+    aspect-ratio: 16/9;
+    border-radius: .5rem;
+}
+
+section.videos div.description {
+    width: 50vw;
+    margin: 2rem 0;
+}
+
+section.videos div.description p {
+    text-align: justify;
+}
+
+section.videos div.pagination {
+    display: flex;
+}
+
+section.videos div.pagination div.bouton {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 1rem;
+    border-radius: 2rem;
+    background-color: var(--main-pagination-bg-color);
+    transition: all .2s ease-in-out;
+}
+
+section.videos div.pagination div.bouton:hover {
+    transform: scale(1.3);
+}
+
+section.videos div.pagination div.bouton.selected {
+    background-color: var(--second-pagination-bg-color);
+}
+
+section.videos div.pagination div.bouton.selected:hover {
+    transform: scale(1);
+}
+
+footer {
+    height: 15rem;
+    background-color: var(--main-bg-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer div.contact {
+    display: flex;
+    align-items: center;
+}
+
+footer div.contact * {
+    margin: 0 2rem;
+}
+
+footer div.contact a {
+    background-color: var(--main-pagination-bg-color);
+    padding: 1rem;
+    border-radius: 2rem;
+    color: black;
+}
+
+footer div.reseaux img {
+    height: 2rem;
+    margin: 0 1rem;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+}
+
+footer div.reseaux img:hover {
+    -webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(0%);
+}
+
 /* Small screens, laptops */
 @media screen and (max-width: 1024px) {
     html {
@@ -157,7 +277,8 @@ section.bio div.text p {
 
     header,
     header div.overlay,
-    section.bio {
+    section.bio,
+    section.videos {
         height: 60vh;
     }
 
@@ -168,6 +289,16 @@ section.bio div.text p {
     section.bio div.text {
         transform: none;
     }
+
+    section.videos div.video img {
+        display: none;
+    }
+
+    section.videos div.video iframe,
+    section.videos div.description {
+        width: 60vw;
+    }
+
 }
 
 /* Mobile devices */
