@@ -1,9 +1,22 @@
 /* font : pas loin de Banhshift -> classique */
 
+@font-face {
+    font-family: 'Bahnschrift';
+    src: url('/fonts/BAHNSCHRIFT.ttf') format('truetype');
+}
+
 :root {
     --main-font-color-white: rgba(255, 255, 255, 1);
     --main-bg-color: rgba(232, 232, 232, 1);
+    --overlay-bg-color: rgba(37, 58, 88, .5);
     --second-bg-color: rgba(242, 242, 242, 1);
+
+    --main-font: 'Bahnschrift';
+}
+
+html {
+    font-size: 16px;
+    font-family: var(--main-font);
 }
 
 body {
@@ -44,7 +57,7 @@ header {
 }
 
 header div.overlay {
-    background-color: rgba(37, 58, 88, .5);
+    background-color: var(--overlay-bg-color);
     height: 100vh;
     width: 100%;
     position: absolute;
@@ -65,9 +78,17 @@ header div.reseaux {
     position: relative;
 }
 
+div.reseaux img {
+    transition: all .2s ease-in-out;
+}
+
+div.reseaux img:hover {
+    transform: scale(1.4);
+}
+
 header img {
-    max-height: 7vh;
-    max-width: 7vw;
+    max-height: 3rem;
+    max-width: 3rem;
     margin: 2vw;
 }
 
@@ -106,6 +127,7 @@ section.bio div.text {
 
 section.bio img {
     position: relative;
+    margin-right: 3rem;
     z-index: 1;
     max-height: 60vh;
     max-width: 50vw;
@@ -119,7 +141,26 @@ section.bio div.text p {
     text-align: justify;
 }
 
-@media screen and (max-width: 800px) {
+/* Small screens, laptops */
+@media screen and (max-width: 1024px) {
+    html {
+        font-size: 13px;
+    }
+}
+
+/* Ipads, Tables */
+@media screen and (max-width: 768px) {
+
+    html {
+        font-size: 10px;
+    }
+
+    header,
+    header div.overlay,
+    section.bio {
+        height: 60vh;
+    }
+
     section.bio img {
         display: none;
     }
@@ -129,10 +170,9 @@ section.bio div.text p {
     }
 }
 
-
-
-
-
-
-
-
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 8px;
+    }
+}
