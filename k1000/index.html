@@ -39,21 +39,23 @@
         </section>
         <section class="videos">
             <h3>Mes vidéos</h3>
-            <div class="video">
-                <img src="ressources/left-arrow.svg" alt="Bouton gauche">
-                <iframe src="https://www.youtube.com/embed/nof6OEDJxZU" title="Vidéo youtube les gens par K1000prod" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <img src="ressources/right-arrow.svg" alt="Bouton droite"></a>
-            </div>
-            <div class="description">
-                <h4>Titre de la vidéo</h4>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                </p>
+            <div id="zone-swip">
+                <div class="video">
+                    <img id="fleche-gauche" src="ressources/left-arrow.svg" alt="Bouton gauche">
+                    <iframe src="" title="Vidéo youtube les gens par K1000prod" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <img id="fleche-droite" src="ressources/right-arrow.svg" alt="Bouton droite"></a>
+                </div>
+                <div class="description">
+                    <!-- Titre de la vidéo -->
+                    <h4></h4>
+                    <!-- Description de la vidéo -->
+                    <p></p>
+                </div>
             </div>
             <div class="pagination">
-                <a href="#"><div class="bouton selected"></div></a>
+                <!-- <a href="#"><div class="bouton selected"></div></a>
                 <a href="#"><div class="bouton"></div></a>
-                <a href="#"><div class="bouton"></div></a>
+                <a href="#"><div class="bouton"></div></a> -->
             </div>
         </section>
     </main>    
@@ -61,7 +63,7 @@
     <footer>
         <div class="contact">
             <p>📝 k1000officiel@gmail.com</p>
-            <a href="#">Dossier de presse</a>
+            <a href="ressources/dossier-de-presse.pdf" target="_blank">Dossier de presse</a>
         </div>
         <div class="reseaux">
             <a href="#" target="_blank"><img src="ressources/deezer.png" title="deezer" alt="deezer"></a>
@@ -73,5 +75,8 @@
         </div>
         <p>© 2023 by K1000 prod</p>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <script src="js/jquery-3.6.3.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
