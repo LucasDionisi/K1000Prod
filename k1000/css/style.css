@@ -190,14 +190,17 @@ section.videos div.video img:hover {
     cursor: pointer;
 }
 
-section.videos div.video iframe {
+section.videos div.video iframe,
+section.videos div.description {
     width: 50vw;
+}
+
+section.videos div.video iframe {
     aspect-ratio: 16/9;
     border-radius: .5rem;
 }
 
 section.videos div.description {
-    width: 50vw;
     margin: 2rem 0;
 }
 
@@ -289,7 +292,8 @@ footer div.reseaux img:hover {
     header div.overlay,
     section.bio,
     section.videos {
-        height: 60vh;
+        min-height: 60vh;
+        max-height: 80vh;
     }
 
     section.bio img {
@@ -336,12 +340,10 @@ footer div.reseaux img:hover {
         height: 50vh;
     }
 
-    section.bio {
-        height: 40vh;
-    }
-
+    section.bio,
     section.videos {
-        height: 50vh;
+        max-height: 80vh;
+        min-height: 40vh;
     }
 
     section.videos div.video iframe,
