@@ -1,21 +1,3 @@
-var videos = [
-    {
-        url: 'https://www.youtube.com/embed/nof6OEDJxZU',
-        titre: 'Les gens',
-        description: "K1000 Live Looping Session @ Some Music (Brussels, Belgium).<br>Composé, écrit et produit par K1000prod (merci au FC Parolier.e). Clip produit et réalisé par Macca Production ; un grand merci à Jason. Minia réalisée par l'incroyable Margowinch. Cette Live Session a été réalisé avec du live looping, du scripted looping et des éléments déjà enregistrés."
-    },
-    {
-        url: 'https://www.youtube.com/embed/XlPmf7O-nXI',
-        titre: 'OSEF',
-        description: "K1000 Live Looping Session @ Some Music (Brussels, Belgium).<br>Composé, écrit et produit par K1000prod (merci au FC Parolier.e). Clip produit et réalisé par Macca Production ; un grand merci à Jason. Minia réalisée par l'incroyable Margowinch. Cette Live Session a été réalisé avec du live looping, du scripted looping et des éléments déjà enregistrés."
-    },
-    {
-        url: 'https://www.youtube.com/embed/-MhT8zfftMw',
-        titre: 'Captain Mabb',
-        description: "K1000 Live Looping Session @ Some Music (Brussels, Belgium).<br>Composé, écrit et produit par K1000prod (merci au FC Parolier.e). Clip produit et réalisé par Macca Production ; un grand merci à Jason. Minia réalisée par l'incroyable Margowinch. Cette Live Session a été réalisé avec du live looping, du scripted looping et des éléments déjà enregistrés."
-    }
-];
-
 var videoSelect = 0;
 var precVideoSelect = 0;
 
@@ -34,28 +16,39 @@ $(document).ready(function () {
     for (var i = 0; i < videos.length; i++) {
         var boutonPagination = document.createElement('div');
         boutonPagination.classList.add('bouton');
+        boutonPagination.dataset.page = i;
         boutonsPagination.push(boutonPagination);
     }
     boutonsPagination.forEach((btn) => $('section.videos div.pagination')[0].appendChild(btn));
+
+    $('div.pagination div.bouton').on('click', function () {
+        precVideoSelect = videoSelect;
+        videoSelect = this.dataset.page;
+        actualiserVideo();
+    });
 
     actualiserVideo();
 
     if (window.screen.width < 768) {
         var zoneSwipe = document.getElementById("zone-swip");
         var hammer = new Hammer(zoneSwipe);
-        
+
         hammer.on("swipeleft", function () {
-            videoPrecedente();
-        
-            zoneSwipe.classList.add('swipe-left');
-            setTimeout(() => zoneSwipe.classList.remove('swipe-left'), 500);
+            if (videoSelect < videos.length - 1) {
+                videoSuivante();
+
+                zoneSwipe.classList.add('swipe-left');
+                setTimeout(() => zoneSwipe.classList.remove('swipe-left'), 500);
+            }
         });
-        
+
         hammer.on("swiperight", function () {
-            videoSuivante();
-        
-            zoneSwipe.classList.add('swipe-right');
-            setTimeout(() => zoneSwipe.classList.remove('swipe-right'), 500);
+            if (videoSelect > 0) {
+                videoPrecedente();
+
+                zoneSwipe.classList.add('swipe-right');
+                setTimeout(() => zoneSwipe.classList.remove('swipe-right'), 500);
+            }
         });
     }
 });
