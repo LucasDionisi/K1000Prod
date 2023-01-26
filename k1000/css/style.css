@@ -308,7 +308,7 @@ footer div.reseaux img:hover {
 
     section.videos div.video iframe,
     section.videos div.description {
-        width: 60vw;
+        width: 70vw;
     }
 
     #zone-swip {
@@ -342,6 +342,11 @@ footer div.reseaux img:hover {
 
     section.videos {
         height: 50vh;
+    }
+
+    section.videos div.video iframe,
+    section.videos div.description {
+        width: 80vw;
     }
 
     section.bio div.text {
