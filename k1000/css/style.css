@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: 'Bahnschrift';
-    src: url('/fonts/BAHNSCHRIFT.ttf') format('truetype');
+    src: url('/fonts/font.ttf') format('truetype');
 }
 
 :root {
@@ -198,6 +198,7 @@ section.videos div.description {
 section.videos div.video iframe {
     aspect-ratio: 16/9;
     border-radius: .5rem;
+    box-shadow: 0.75rem 0rem 1.5rem 0 rgb(0 0 0 / 40%);
 }
 
 section.videos div.description {

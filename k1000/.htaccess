@@ -1,0 +1,2 @@
+RewriteCond %{HTTP_HOST} ^musique.k1000prod.fr$ [NC]
+RewriteRule (.*) https://musique.k1000prod.fr [R=301,L] 
