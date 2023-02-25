@@ -280,6 +280,17 @@ footer div.reseaux img:hover {
     html {
         font-size: 13px;
     }
+
+    @media (orientation: portrait) {
+        header,
+        header div.overlay,
+        section.bio,
+        section.videos {
+            min-height: 45vh;
+            max-height: 56vh;
+        }
+    
+      }
 }
 
 /* Ipads, Tablettes */
